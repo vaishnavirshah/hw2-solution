@@ -101,6 +101,10 @@ public class ExpenseTrackerView extends JFrame {
     return (List<Transaction>) transactionsTable;
   }
 
+  /**
+   * function to return the table
+   * @return
+   */
   public JTable getTable() {
     return transactionsTable;
   }
@@ -114,6 +118,10 @@ public class ExpenseTrackerView extends JFrame {
     }
   }
 
+/**
+ * function to return the number of the row selected by the user
+ * @return
+ */
   public int getRow(){
     int row = transactionsTable.getSelectedRow();
     return row;
@@ -184,6 +192,11 @@ public class ExpenseTrackerView extends JFrame {
   public JButton getAddTransactionBtn() {
     return addTransactionBtn;
   }
+
+  /**
+   * function to return the undo transaction button
+   * @return
+   */
 
   public JButton getUndoTransactionBtn() {
     return undoTransactionBtn;

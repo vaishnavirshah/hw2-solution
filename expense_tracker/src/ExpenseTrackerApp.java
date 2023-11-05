@@ -38,12 +38,18 @@ public class ExpenseTrackerApp {
       }
     });
 
+    /**
+     * calling the remove row button in the controller
+     */
     view.getUndoTransactionBtn().addActionListener(e -> {
       int selectedRow = view.getRow();
       controller.removeRow(selectedRow);
     
     });
 
+    /**
+     * disable the undo button when no rows have been selected
+     */
     view.getTable().getSelectionModel().addListSelectionListener(e -> {
         // If a row is selected
         if (view.getTable().getSelectedRow() != -1 || view.getTable().getRowCount() == 0) {

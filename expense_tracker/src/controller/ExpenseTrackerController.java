@@ -52,7 +52,12 @@ public class ExpenseTrackerController {
     return true;
   }
 
-  public boolean removeRow(int rowNum) {
+  /**
+   * function to remove the selected row 
+   * @param rowNum
+   * @return
+   */
+  public void removeRow(int rowNum) {
     List<Transaction> transactions = model.getTransactions();
       for (Transaction t : transactions) {
         int rowIndex = transactions.indexOf(t);
@@ -61,7 +66,6 @@ public class ExpenseTrackerController {
         }
       }
     refresh();
-    return true;
   }
 
   public void applyFilter() {
