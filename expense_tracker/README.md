@@ -2,6 +2,11 @@
 
 The homework will be based on this project named "Expense Tracker",where users will be able to add/remove daily transaction. 
 
+## Undo functionality
+Undo functionality added where users can delete any selected row.
+The button will be enabled only when a row is selected otherwise will remain disabled.
+The total field will get updated everytime a transaction is deleted.
+
 ## Compile
 
 To compile the code from terminal, use the following command:
