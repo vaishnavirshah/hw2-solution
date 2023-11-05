@@ -16,6 +16,7 @@ public class ExpenseTrackerView extends JFrame {
 
   private JTable transactionsTable;
   private JButton addTransactionBtn;
+  private JButton undoTransactionBtn;
   private JFormattedTextField amountField;
   private JTextField categoryField;
   private DefaultTableModel model;
@@ -41,7 +42,8 @@ public class ExpenseTrackerView extends JFrame {
     transactionsTable = new JTable(model);
 
     addTransactionBtn = new JButton("Add Transaction");
-
+    undoTransactionBtn = new JButton("Undo Transaction");
+    undoTransactionBtn.setEnabled(false);
     // Create UI components
     JLabel amountLabel = new JLabel("Amount:");
     NumberFormat format = NumberFormat.getNumberInstance();
@@ -75,6 +77,7 @@ public class ExpenseTrackerView extends JFrame {
     JPanel buttonPanel = new JPanel();
     buttonPanel.add(amountFilterBtn);
     buttonPanel.add(categoryFilterBtn);
+    buttonPanel.add(undoTransactionBtn);
   
     // Add panels to frame
     add(inputPanel, BorderLayout.NORTH);
@@ -98,6 +101,10 @@ public class ExpenseTrackerView extends JFrame {
     return (List<Transaction>) transactionsTable;
   }
 
+  public JTable getTable() {
+    return transactionsTable;
+  }
+
   public double getAmountField() {
     if(amountField.getText().isEmpty()) {
       return 0;
@@ -105,6 +112,11 @@ public class ExpenseTrackerView extends JFrame {
     double amount = Double.parseDouble(amountField.getText());
     return amount;
     }
+  }
+
+  public int getRow(){
+    int row = transactionsTable.getSelectedRow();
+    return row;
   }
 
   public void setAmountField(JFormattedTextField amountField) {
@@ -173,6 +185,9 @@ public class ExpenseTrackerView extends JFrame {
     return addTransactionBtn;
   }
 
+  public JButton getUndoTransactionBtn() {
+    return undoTransactionBtn;
+  }
 
   public void highlightRows(List<Integer> rowIndexes) {
       // The row indices are being used as hashcodes for the transactions.

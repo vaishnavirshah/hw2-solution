@@ -38,6 +38,22 @@ public class ExpenseTrackerApp {
       }
     });
 
+    view.getUndoTransactionBtn().addActionListener(e -> {
+      int selectedRow = view.getRow();
+      boolean added = controller.removeRow(selectedRow);
+    
+    });
+
+    view.getTable().getSelectionModel().addListSelectionListener(e -> {
+        // If a row is selected
+        if (view.getTable().getSelectedRow() != -1 || view.getTable().getRowCount() == 0) {
+            view.getUndoTransactionBtn().setEnabled(true); // Enable the button
+        } else {
+            view.getUndoTransactionBtn().setEnabled(false); // No row selected, disable the button
+        }
+    
+  });
+
       // Add action listener to the "Apply Category Filter" button
     view.addApplyCategoryFilterListener(e -> {
       try{
