@@ -40,7 +40,7 @@ public class ExpenseTrackerApp {
 
     view.getUndoTransactionBtn().addActionListener(e -> {
       int selectedRow = view.getRow();
-      boolean added = controller.removeRow(selectedRow);
+      controller.removeRow(selectedRow);
     
     });
 
