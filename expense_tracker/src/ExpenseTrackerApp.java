@@ -57,6 +57,8 @@ public class ExpenseTrackerApp {
         } else {
             view.getUndoTransactionBtn().setEnabled(false); // No row selected, disable the button
         }
+        if(view.getTable().getSelectedRow() == model.getTransactions().size())
+          view.getUndoTransactionBtn().setEnabled(false);
     
   });
 
