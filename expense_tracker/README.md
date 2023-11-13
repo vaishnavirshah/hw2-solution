@@ -1,4 +1,7 @@
-# HW3 implemented undo functionality and testing 
+# HW3 implemented undo functionality and unit testing
+
+Implemented Undo functionality to delete a transaction.
+Also done unit testing for various scenarios.
 
 
 # hw1- Manual Review
